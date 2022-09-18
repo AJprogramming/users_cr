@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='edit.css') }}"
+    />
+    <title>Users Edit</title>
+  </head>
+  <body>
+    <div id="containment">
+      <a class="home" href="http://127.0.0.1:5000/users">Home</a>
+      <h1>Edit User Information</h1>
+      <form action="/users/editing_user" method="POST">
+        <div>
+          <input type="hidden" name="id" id="id" value="{{ user.id }}" />
+        </div>
+        <div class="mb-3 mx-auto" style="width: 300px">
+          <label for="first_name" class="form-label">First Name</label>
+          <input
+            type="text"
+            name="first_name"
+            class="form-control"
+            id="formGroupExampleInput"
+            value="{{
+            user.first_name
+            }}"
+          />
+        </div>
+        <div class="mb-3 mx-auto" style="width: 300px">
+          <label for="last_name" class="form-label">Last Name</label>
+          <input
+            type="text"
+            name="last_name"
+            class="form-control"
+            id="formGroupExampleInput2"
+            value="{{ user.last_name }}"
+          />
+        </div>
+        <div class="mb-3 mx-auto" style="width: 300px">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="text"
+            name="email"
+            class="form-control"
+            id="formGroupExampleInput2"
+            value="{{ user.email }}"
+          />
+        </div>
+        <div class="click">
+          <input class="btn btn-primary sub" type="submit" value="Update" />
+        </div>
+      </form>
+      <div class="show_link">
+        <a
+          class="btn btn-primary"
+          href="http://127.0.0.1:5000/users/{{ user.id }}"
+          role="button"
+          >Show User</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

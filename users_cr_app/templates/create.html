@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='create.css') }}"
+    />
+    <title>Create</title>
+  </head>
+  <body>
+    <a href="http://127.0.0.1:5000/users">Home</a>
+    <h1>Add a User</h1>
+    <form action="/users/creating_user" method="POST">
+      <div class="mb-3 mx-auto" style="width: 300px">
+        <label for="first_name" class="form-label">First Name</label>
+        <input
+          type="text"
+          name="first_name"
+          class="form-control"
+          id="formGroupExampleInput"
+          placeholder="Enter First Name"
+        />
+      </div>
+      <div class="mb-3 mx-auto" style="width: 300px">
+        <label for="last_name" class="form-label">Last Name</label>
+        <input
+          type="text"
+          name="last_name"
+          class="form-control"
+          id="formGroupExampleInput2"
+          placeholder="Enter Last Name"
+        />
+      </div>
+      <div class="mb-3 mx-auto" style="width: 300px">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="text"
+          name="email"
+          class="form-control"
+          id="formGroupExampleInput2"
+          placeholder="Enter Email Address"
+        />
+      </div>
+      <input type="submit" value="Add User" />
+    </form>
+  </body>
+</html>

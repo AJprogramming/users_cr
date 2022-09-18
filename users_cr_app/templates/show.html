@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='show.css') }}"
+    />
+    <title>Users Show</title>
+  </head>
+  <body>
+    <div id="containment">
+      <div class="home">
+        <a href="http://127.0.0.1:5000/users">Home</a>
+      </div>
+      <div class="card" style="width: 25rem">
+        <div class="card-body">
+          <h5 class="card-title">User {{user.id}}</h5>
+          <h6 class="card-subtitle mb-2">
+            {{ user.first_name}} {{ user.last_name}}
+          </h6>
+          <p class="card-text">Email: {{ user.email }}.</p>
+          <p class="card-text">
+            Created On: {{ user.created_at.strftime("%m-%d-%Y %H:%M") }}.
+          </p>
+          <p class="card-text">
+            Updated On: {{ user.updated_at.strftime("%m-%d-%Y %H:%M") }}.
+          </p>
+          <a
+            href="http://127.0.0.1:5000/users/edit/{{ user.id }}"
+            class="card-link"
+            >Edit</a
+          >
+          <a
+            href="http://127.0.0.1:5000/users/delete/{{ user.id }}"
+            class="card-link"
+            >Delete</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
